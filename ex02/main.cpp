@@ -14,12 +14,12 @@ int main() {
         std::cout << GREY2 "arr1 size: " << arr1.size() << RESET << std::endl; 
         
         std::cout << "\n----------------------"  GREY2 ITALIC " Constructor with param" RESET << std::endl;
-        const Array<double> arr2(5); // Constructor with size
+        Array<double> arr2(5); // Constructor with size
         std::cout << GREY2 "arr2 size: " << arr2.size() << RESET << std::endl;
         std::cout << arr2 << std::endl;
         
         std::cout << "----------------------"  GREY2 ITALIC " Modified arr2 with subscript operator" RESET << std::endl;
-       // arr2[3] = 10.01; // Using subscript operator
+        arr2[3] = 10.01; // Using subscript operator, does not compile if arr is const
         std::cout << arr2 << std::endl;
 
         std::cout << "\n----------------------"  GREY2 ITALIC " Copy constructor arr3(arr2)" RESET << std::endl;
@@ -28,7 +28,7 @@ int main() {
         std::cout << arr3 << std::endl;
 
         std::cout << "----------------------"  GREY2 ITALIC " Modify arr2" RESET << std::endl;
-       // arr2[3] = 42; // Using subscript operator
+        arr2[3] = 42; // Using subscript operator, does not compile if arr is const
         std::cout << arr2 << std::endl;
 
         std::cout << "----------------------"  GREY2 ITALIC " Does not change arr3" RESET << std::endl;
@@ -41,7 +41,7 @@ int main() {
         std::cout << arr4 << std::endl;
 
         std::cout << "----------------------"  GREY2 ITALIC " Modify arr4" RESET << std::endl;
-        arr4[3] = 20.02; // Modifying arr3 using subscript operator
+        arr4[3] = 20.02; // Modifying arr3 using subscript operator , does not compile if arr is const
         std::cout << arr4 << std::endl;
 
         std::cout << "----------------------"  GREY2 ITALIC " Does not change arr2" RESET << std::endl;
